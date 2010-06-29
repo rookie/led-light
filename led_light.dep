@@ -9,13 +9,15 @@
       <file>$PROJ_DIR$\Debug\Exe\led_light.d43</file>
       <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
       <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
-      <file>$TOOLKIT_DIR$\inc\io430x14x.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\io430.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
       <file>$PROJ_DIR$\main.c</file>
       <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$TOOLKIT_DIR$\inc\MSP430F149.h</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -31,7 +33,7 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 1 2 6 8</file>
+          <file> 1 2 4 6</file>
         </tool>
       </inputs>
     </file>
@@ -40,17 +42,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 4</file>
+          <file> 3</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 6</file>
+          <file> 4</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC430</name>
-          <file> 5 3</file>
+          <file> 8 9 10 11</file>
         </tool>
       </inputs>
     </file>
@@ -59,7 +61,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 4</file>
+          <file> 3</file>
         </tool>
       </inputs>
     </file>

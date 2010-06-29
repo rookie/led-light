@@ -1,7 +1,8 @@
 [DebugChecksum]
-Checksum=197205208
+Checksum=382104502
 [DisAssemblyWindow]
-NumStates=_ 0
+NumStates=_ 1
+State 1=_ 1
 [CodeCoverage]
 Enabled=_ 0
 [Profiling]
@@ -37,6 +38,7 @@ Category=_ 0
 LoggingEnabled=_ 0
 LogFile=_ ""
 [Aliases]
+A0=_ "" ""
 Count=1
 SuppressDialog=0
 [TraceHelper]
