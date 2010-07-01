@@ -19,6 +19,17 @@ LimitSize=0
 ByteLimit=50
 [InstructionProfiling]
 Enabled=_ 0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[DriverProfiling]
+Enabled=0
+Source=1
+Graph=0
 [Breakpoints]
 Count=0
 [Interrupts]
@@ -30,13 +41,6 @@ UseAuto=0
 TypeViolation=1
 UnspecRange=1
 ActionState=1
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 A0=_ "" ""
 Count=1
@@ -44,7 +48,3 @@ SuppressDialog=0
 [TraceHelper]
 Enabled=0
 ShowSource=1
-[DriverProfiling]
-Enabled=0
-Source=1
-Graph=0
