@@ -2,44 +2,41 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>3285691452</fileChecksum>
+  <fileChecksum>1853416578</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
       <file>$PROJ_DIR$\Debug\Exe\led_light.d43</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\wiring.h</file>
-      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-      <file>$PROJ_DIR$\arduino.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
+      <file>$PROJ_DIR$\arduino.c</file>
       <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$PROJ_DIR$\arduino.h</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\arduino.r43</file>
-      <file>$PROJ_DIR$\wiring.c</file>
-      <file>$TOOLKIT_DIR$\inc\MSP430F149.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\arduino.pbi</file>
       <file>$TOOLKIT_DIR$\inc\in430.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\arduino.c</file>
+      <file>$TOOLKIT_DIR$\inc\msp430x20x3.h</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\Debug\Obj\led_light.pbd</name>
-      <inputs>
+      <name>[ROOT_NODE]</name>
+      <outputs>
         <tool>
-          <name>BILINK</name>
-          <file> 14 13</file>
+          <name>XLINK</name>
+          <file> 0</file>
         </tool>
-      </inputs>
+      </outputs>
     </file>
     <file>
       <name>$PROJ_DIR$\Debug\Exe\led_light.d43</name>
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 9 8 7 2</file>
+          <file> 4 5 6 9</file>
         </tool>
       </inputs>
     </file>
@@ -48,17 +45,26 @@
       <outputs>
         <tool>
           <name>ICC430</name>
-          <file> 7</file>
+          <file> 6</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 13</file>
+          <file> 11</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC430</name>
-          <file> 5 12 15 3</file>
+          <file> 14 13 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\led_light.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 11</file>
         </tool>
       </inputs>
     </file>
@@ -66,34 +72,25 @@
       <name>$PROJ_DIR$\arduino.c</name>
       <outputs>
         <tool>
+          <name>ICC430</name>
+          <file> 10</file>
+        </tool>
+        <tool>
           <name>BICOMP</name>
-          <file> 14</file>
+          <file> 12</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ICC430</name>
-          <file> 6</file>
+          <file> 7</file>
         </tool>
         <tool>
           <name>BICOMP</name>
-          <file> 6</file>
+          <file> 7</file>
         </tool>
       </inputs>
     </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 1</file>
-        </tool>
-      </outputs>
-    </file>
-    <forcedrebuild>
-      <name>[MULTI_TOOL]</name>
-      <tool>XLINK</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>

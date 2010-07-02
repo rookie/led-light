@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=382104502
+Checksum=471983106
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -19,21 +19,14 @@ LimitSize=0
 ByteLimit=50
 [InstructionProfiling]
 Enabled=_ 0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[DriverProfiling]
-Enabled=0
-Source=1
-Graph=0
 [Breakpoints]
-Count=0
+Bp0=_ "STD_CODE" "Memory:0x0" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\main.c}.52.3@1" 1 0 0 0 "" 0 ""
+Count=2
 [Interrupts]
 Enabled=1
+Irq0=_ 0 5000 0 0 1 0 0 100 0 1 "TIMERA0_VECTOR 0x0C  2  TACCTL0.CCIE  TACCTL0.CCIFG"
+Count=1
 [MemoryMap]
 Enabled=0
 Base=0
@@ -41,6 +34,13 @@ UseAuto=0
 TypeViolation=1
 UnspecRange=1
 ActionState=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 A0=_ "" ""
 Count=1
@@ -48,3 +48,7 @@ SuppressDialog=0
 [TraceHelper]
 Enabled=0
 ShowSource=1
+[DriverProfiling]
+Enabled=0
+Source=1
+Graph=0

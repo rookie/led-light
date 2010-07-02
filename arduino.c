@@ -39,34 +39,35 @@ void SIGNAL(int TIMER0_OVF_vect)
 unsigned long millis()
 {
         unsigned long m;
-        uint8_t oldSREG = SREG;
+//        uint8_t oldSREG = SREG;
 
         // disable interrupts while we read timer0_millis or we might get an
         // inconsistent value (e.g. in the middle of a write to timer0_millis)
-        cli();
+//        cli();
         m = timer0_millis;
-        SREG = oldSREG;
+//        SREG = oldSREG;
 
         return m;
 }
 
 unsigned long micros() {
         unsigned long m;
-        uint8_t oldSREG = SREG, t;
-       
-        cli();
+//        uint8_t oldSREG = SREG, t;
+        uint8_t t;
+        
+//        cli();
         m = timer0_overflow_count;
-        t = TCNT0;
+//        t = TCNT0;
  
 #ifdef TIFR0
         if ((TIFR0 & _BV(TOV0)) && (t < 255))
                 m++;
 #else
-        if ((TIFR & _BV(TOV0)) && (t < 255))
+//        if ((TIFR & _BV(TOV0)) && (t < 255))
                 m++;
 #endif
 
-        SREG = oldSREG;
+//        SREG = oldSREG;
        
         return ((m << 8) + t) * (64 / clockCyclesPerMicrosecond());
 }
