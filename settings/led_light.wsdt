@@ -14,10 +14,10 @@
           
         <Column0>111</Column0><Column1>27</Column1><Column2>27</Column2><Column3>14272096</Column3></ColumnWidths>
       </Workspace>
-    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>707</ColumnWidth1><ColumnWidth2>188</ColumnWidth2><ColumnWidth3>47</ColumnWidth3></Build><TerminalIO/></Static>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>707</ColumnWidth1><ColumnWidth2>188</ColumnWidth2><ColumnWidth3>47</ColumnWidth3></Build><TerminalIO/><Debug-Log><ColumnWidth0>21</ColumnWidth0><ColumnWidth1>955</ColumnWidth1></Debug-Log></Static>
     <Windows>
       
-    <Wnd0>
+    <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-9102-27571</Identity>
@@ -29,20 +29,20 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd0><Wnd1><Tabs><Tab><Identity>TabID-26062-32165</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd1></Windows>
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-26062-32165</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-14814-17127</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>1</SelectedTab></Wnd3></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>33</YPos><SelStart>1350</SelStart><SelEnd>1352</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\arduino.h</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>1046</SelStart><SelEnd>1046</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\arduino.c</Filename><XPos>0</XPos><YPos>14</YPos><SelStart>820</SelStart><SelEnd>820</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\wiring.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>925</SelStart><SelEnd>1555</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\wiring.h</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>250</SelStart><SelEnd>250</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>1302</SelStart><SelEnd>1302</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\arduino.h</Filename><XPos>0</XPos><YPos>27</YPos><SelStart>1046</SelStart><SelEnd>1046</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\arduino.c</Filename><XPos>0</XPos><YPos>14</YPos><SelStart>820</SelStart><SelEnd>820</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\wiring.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>925</SelStart><SelEnd>1555</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\wiring.h</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>250</SelStart><SelEnd>250</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-00911160><key>iaridepm.enu1</key></Toolbar-00911160></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2><Row3><Sizes><Toolbar-009b5350><key>debuggergui.enu1</key></Toolbar-009b5350></Sizes></Row3></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>423</Bottom><Right>185</Right><x>-2</x><y>-2</y><xscreen>187</xscreen><yscreen>162</yscreen><sizeHorzCX>184236</sizeHorzCX><sizeHorzCY>257962</sizeHorzCY><sizeVertCX>184236</sizeVertCX><sizeVertCY>676752</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>160</Bottom><Right>1017</Right><x>-2</x><y>-2</y><xscreen>1019</xscreen><yscreen>162</yscreen><sizeHorzCX>1003941</sizeHorzCX><sizeHorzCY>257962</sizeHorzCY><sizeVertCX>184236</sizeVertCX><sizeVertCY>257962</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-00461050><key>iaridepm.enu1</key></Toolbar-00461050></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>423</Bottom><Right>185</Right><x>-2</x><y>-2</y><xscreen>187</xscreen><yscreen>162</yscreen><sizeHorzCX>184236</sizeHorzCX><sizeHorzCY>257962</sizeHorzCY><sizeVertCX>184236</sizeVertCX><sizeVertCY>676752</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>160</Bottom><Right>1017</Right><x>-2</x><y>-2</y><xscreen>1019</xscreen><yscreen>162</yscreen><sizeHorzCX>1003941</sizeHorzCX><sizeHorzCY>257962</sizeHorzCY><sizeVertCX>184236</sizeVertCX><sizeVertCY>257962</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
