@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=105770066
+Checksum=-985563604
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -38,14 +38,21 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [State Storage]
-Control Register=63574
+Control Register=63562
 [Sequencer]
-Control Register=63574
-NextState0=63574
-NextState1=63574
+Control Register=63562
+NextState0=63562
+NextState1=63562
 [Action Register]
 Break=1
 State Storage=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Breakpoints]
 Bp0=_ "STD_CODE" "Memory:0x0" 0 0 0 0 "" 0 ""
 Count=1
@@ -69,13 +76,6 @@ SP=0
 SR=0
 all registers=0
 File name=
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 A0=_ "" ""
 Count=1
