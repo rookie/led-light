@@ -30,11 +30,11 @@ void main(void)
 {
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
   
-  BCSCTL1 = CALBC1_8MHZ;
-  DCOCTL = CALDCO_8MHZ; 
+  BCSCTL1 = CALBC1_1MHZ;
+  DCOCTL = CALDCO_1MHZ; 
   _BIS_SR(OSCOFF);
   
-  BCSCTL2 = DIVM_3;
+  BCSCTL2 = DIVS_3;
   
 /*
 (2) If you set BIT4 of both of P1SEL and P1DIR to 1, you
@@ -50,7 +50,7 @@ should be able to see SMCLK at P1.4 with an oscilloscope.
   
   TACCTL0 = CCIE;                             // CCR0 interrupt enabled
   //TACCR0 = 0xFF;
-  TACTL = TASSEL_2 + ID_3 + MC_2;                  // SMCLK, contmode
+  TACTL = TASSEL_2 + ID_3 + MC_2;                  // SMCLK, /8, contmode
   //TACTL = TASSEL_2 + ID_0 + MC_1;             // SMCLK, upmode
   //TACTL = TASSEL_1 + ID_3 + MC_1;             // ACLK, /8 upmode
   _BIS_SR(LPM0_bits + GIE);                 // Enter LPM0 w/ interrupts
