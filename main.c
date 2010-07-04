@@ -29,15 +29,34 @@ Timer_A interrupt vector          TAIV      Read only  012Eh  Reset with POR
 void main(void)
 {
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
+  
+  BCSCTL1 = CALBC1_8MHZ;
+  DCOCTL = CALDCO_8MHZ; 
+  _BIS_SR(OSCOFF);
+  
+  BCSCTL2 = DIVM_3;
+  
+/*
+(2) If you set BIT4 of both of P1SEL and P1DIR to 1, you
+should be able to see SMCLK at P1.4 with an oscilloscope.
+  */
+  
+  P1SEL |= BIT4;
+  P1DIR |= BIT4;
+  _EINT();
+  
+//#ifdef TEST_CLOCKS
   P1DIR |= 0x01;                            // P1.0 output
-
+  
   TACCTL0 = CCIE;                             // CCR0 interrupt enabled
   //TACCR0 = 0xFF;
-  TACTL = TASSEL_2 + MC_2;                  // SMCLK, contmode
-  //TACTL = TASSEL_2 + ID_0 + MC_1;             // SMCLK, /8 upmode
+  TACTL = TASSEL_2 + ID_3 + MC_2;                  // SMCLK, contmode
+  //TACTL = TASSEL_2 + ID_0 + MC_1;             // SMCLK, upmode
   //TACTL = TASSEL_1 + ID_3 + MC_1;             // ACLK, /8 upmode
-
   _BIS_SR(LPM0_bits + GIE);                 // Enter LPM0 w/ interrupts
+
+  //#endif
+
 }
 
 // Timer A0 interrupt service routine
