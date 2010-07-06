@@ -28,7 +28,7 @@ __interrupt void Timer_A (void)
         unsigned long m = timer0_millis;
         unsigned char f = timer0_fract;
 
-  P1OUT ^= 0x01;                            // Toggle P1.0
+//  P1OUT ^= 0x01;                            // Toggle P1.0
 
         m += MILLIS_INC;
         f += FRACT_INC;
@@ -107,6 +107,7 @@ void delay(unsigned long ms)
 
 void init()
 {
+  WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT 
   
   BCSCTL1 = CALBC1_16MHZ; /*use precalibrated values to set 16mhz clock*/
   DCOCTL  = CALDCO_16MHZ; 
