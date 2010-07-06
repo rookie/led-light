@@ -32,10 +32,18 @@ void setup(){
 }
 
 void loop(){
-  static unsigned long matt;
-  P1OUT ^= 0x01;                            // Toggle P1.0
-  matt = millis();
-  delay(10000);
+  unsigned long test;
+  unsigned long test2;
+  //P1OUT ^= 0x01;                            // Toggle P1.0
+  test = 0;
+  test = millis();
+  test += 1;
+   delay(10000);
+  test2 = 0;
+  test2 = millis();
+  test2 += 1;
+//  delay(10000);
+//  delay(10000);
 
 }
 

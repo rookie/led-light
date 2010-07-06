@@ -23,11 +23,12 @@ static unsigned char timer0_fract = 0;
 #pragma vector=TIMERA0_VECTOR
 __interrupt void Timer_A (void)
 //void SIGNAL(int TIMER0_OVF_vect)
-{
-        // copy these to local variables so they can be stored in registers
+{        // copy these to local variables so they can be stored in registers
         // (volatile variables must be read from memory on every access)
         unsigned long m = timer0_millis;
         unsigned char f = timer0_fract;
+
+  P1OUT ^= 0x01;                            // Toggle P1.0
 
         m += MILLIS_INC;
         f += FRACT_INC;
@@ -113,15 +114,18 @@ void init()
   
   BCSCTL2 = DIVS_3;       /*set smclk prescaler to 8*/
   /*NOTE: there is no reason for this other than to stick timer to a prescale
-    of 64 after the next 8 divide*/
+    of 64 after the next 8 divide like in the arduino libary*/
   
   
   TACCTL0 = CCIE;         // timer0 CCR0 interrupt enabled
   TACCR0 = 0xFF;
   TACTL = TASSEL_2 + ID_3 + MC_1;     /* SMCLK, /8, contmode*/
   
-  //_EINT(); /*enable interrupts*/
-  __disable_interrupt();
+  
+  _BIS_SR(GIE);
+
+  _EINT(); /*enable interrupts*/
+  __enable_interrupt();
    
   return;
 #if 0

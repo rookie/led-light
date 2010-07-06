@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=549699397
+Checksum=860095404
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -38,19 +38,18 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [State Storage]
-Control Register=63670
+Control Register=63518
 [Sequencer]
-Control Register=63670
-NextState0=63670
-NextState1=63670
+Control Register=63518
+NextState0=63518
+NextState1=63518
 [Action Register]
 Break=3
 State Storage=3
 [Breakpoints]
 Bp0=_ "STD_CODE" "Memory:0x0" 0 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\main.c}.37.10@1" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\arduino.c}.33.9@1" 1 0 0 0 "" 0 ""
-Count=3
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\arduino.c}.28.23@1" 1 0 0 0 "" 0 ""
+Count=2
 [FET]
 Clock mode=38
 Extended Clock mode=-1
