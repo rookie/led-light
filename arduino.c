@@ -120,12 +120,8 @@ void init()
   
   TACCTL0 = CCIE;         // timer0 CCR0 interrupt enabled
   TACCR0 = 0xFF;
-  TACTL = TASSEL_2 + ID_3 + MC_1;     /* SMCLK, /8, contmode*/
+  TACTL = TASSEL_2 + ID_3 + MC_1;     /* SMCLK, /8, upmode*/
   
-  
-  _BIS_SR(GIE);
-
-  _EINT(); /*enable interrupts*/
   __enable_interrupt();
    
   return;

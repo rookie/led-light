@@ -95,14 +95,6 @@
         </tool>
       </outputs>
     </file>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\arduino.c</name>
-      <tool>ICC430</tool>
-    </forcedrebuild>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\main.c</name>
-      <tool>ICC430</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>
