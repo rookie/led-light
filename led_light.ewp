@@ -109,11 +109,11 @@
         </option>
         <option>
           <name>GStackSize2</name>
-          <state>80</state>
+          <state>50</state>
         </option>
         <option>
           <name>GHeapSize2</name>
-          <state>80</state>
+          <state>0</state>
         </option>
         <option>
           <name>RadioDataModelType</name>
@@ -1764,6 +1764,9 @@
       <data/>
     </settings>
   </configuration>
+  <file>
+    <name>$PROJ_DIR$\arduino.c</name>
+  </file>
   <file>
     <name>$PROJ_DIR$\main.c</name>
   </file>

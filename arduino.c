@@ -1,3 +1,5 @@
+//#include <intrinsics.h>
+#include "msp430.h"
 #include "arduino.h"
 
 // the prescaler is set so that timer0 ticks every 64 clock cycles, and the
@@ -17,7 +19,10 @@ volatile unsigned long timer0_overflow_count = 0;
 volatile unsigned long timer0_millis = 0;
 static unsigned char timer0_fract = 0;
 
-void SIGNAL(int TIMER0_OVF_vect)
+// Timer A0 interrupt service routine
+#pragma vector=TIMERA0_VECTOR
+__interrupt void Timer_A (void)
+//void SIGNAL(int TIMER0_OVF_vect)
 {
         // copy these to local variables so they can be stored in registers
         // (volatile variables must be read from memory on every access)
@@ -39,41 +44,54 @@ void SIGNAL(int TIMER0_OVF_vect)
 unsigned long millis()
 {
         unsigned long m;
+        istate_t state = __get_interrupt_state();
+        __disable_interrupt();
 //        uint8_t oldSREG = SREG;
-
         // disable interrupts while we read timer0_millis or we might get an
         // inconsistent value (e.g. in the middle of a write to timer0_millis)
 //        cli();
-        m = timer0_millis;
-//        SREG = oldSREG;
 
+         m = timer0_millis;
+         
+         __set_interrupt_state(state);
+//        SREG = oldSREG;
         return m;
 }
-
+#if 0
 unsigned long micros() {
         unsigned long m;
 //        uint8_t oldSREG = SREG, t;
-        uint8_t t;
+        uint8_t t = 0;
+        istate_t state = __get_interrupt_state();
+        __disable_interrupt();
         
 //        cli();
         m = timer0_overflow_count;
 //        t = TCNT0;
+#warning what is this tcnt0 doing?
  
 #ifdef TIFR0
         if ((TIFR0 & _BV(TOV0)) && (t < 255))
                 m++;
 #else
 //        if ((TIFR & _BV(TOV0)) && (t < 255))
-                m++;
+//                m++;
 #endif
 
 //        SREG = oldSREG;
+         __set_interrupt_state(state);
        
         return ((m << 8) + t) * (64 / clockCyclesPerMicrosecond());
 }
-
+#endif
 void delay(unsigned long ms)
 {
+  /*old*/
+  unsigned long start = millis();
+  
+  while (millis() - start <= ms)
+    ;
+  /* new
         uint16_t start = (uint16_t)micros();
 
         while (ms > 0) {
@@ -82,11 +100,31 @@ void delay(unsigned long ms)
                         start += 1000;
                 }
         }
+  */
 }
 
 
 void init()
 {
+  
+  BCSCTL1 = CALBC1_16MHZ; /*use precalibrated values to set 16mhz clock*/
+  DCOCTL  = CALDCO_16MHZ; 
+  _BIS_SR(OSCOFF);        /*we are not using an external oscillator*/
+  
+  BCSCTL2 = DIVS_3;       /*set smclk prescaler to 8*/
+  /*NOTE: there is no reason for this other than to stick timer to a prescale
+    of 64 after the next 8 divide*/
+  
+  
+  TACCTL0 = CCIE;         // timer0 CCR0 interrupt enabled
+  TACCR0 = 0xFF;
+  TACTL = TASSEL_2 + ID_3 + MC_1;     /* SMCLK, /8, contmode*/
+  
+  //_EINT(); /*enable interrupts*/
+  __disable_interrupt();
+   
+  return;
+#if 0
         // this needs to be called before setup() or some functions won't
         // work there
         sei();
@@ -168,4 +206,6 @@ void init()
 #else
         UCSR0B = 0;
 #endif
+
+#endif //if zero
 }

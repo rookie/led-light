@@ -1,6 +1,7 @@
 
 
 #include "msp430.h"
+#include "arduino.h"
 /*
 defined (__MSP430F2013__)
 #include "MSP430F2013.h"
@@ -26,7 +27,31 @@ Timer_A interrupt vector          TAIV      Read only  012Eh  Reset with POR
 
 //#include <msp430x20x3.h>
 
-void main(void)
+void setup(){
+  P1DIR |= 0x01;                            // P1.0 output
+}
+
+void loop(){
+  static unsigned long matt;
+  P1OUT ^= 0x01;                            // Toggle P1.0
+  matt = millis();
+  delay(10000);
+
+}
+
+int main(void)
+{
+  init();
+  setup();
+
+  for (;;){
+    loop();
+  }
+  //return 0;
+}
+
+
+void main2(void)
 {
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
   
@@ -59,6 +84,7 @@ should be able to see SMCLK at P1.4 with an oscilloscope.
 
 }
 
+/*
 // Timer A0 interrupt service routine
 #pragma vector=TIMERA0_VECTOR
 __interrupt void Timer_A (void)
@@ -66,7 +92,7 @@ __interrupt void Timer_A (void)
   P1OUT ^= 0x01;                            // Toggle P1.0
 }
 
-
+*/
 
 
 
