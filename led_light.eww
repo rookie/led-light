@@ -2,6 +2,9 @@
 
 <workspace>
   <project>
+    <path>$WS_DIR$\arduino\arduinolib.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\led_light.ewp</path>
   </project>
   <batchBuild/>

@@ -2,47 +2,64 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>174964024</fileChecksum>
+  <fileChecksum>1481385985</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\arduino.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\arduino.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\arduino.r43</file>
-      <file>$PROJ_DIR$\arduino.h</file>
       <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
       <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\arduino.h</file>
       <file>$PROJ_DIR$\Debug\Exe\led_light.d43</file>
+      <file>$PROJ_DIR$\arduino.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\arduino.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\arduino.pbi</file>
       <file>$TOOLKIT_DIR$\inc\in430.h</file>
       <file>$TOOLKIT_DIR$\config\lnk430F2013.xcl</file>
       <file>$TOOLKIT_DIR$\inc\msp430.h</file>
       <file>$TOOLKIT_DIR$\inc\MSP430F2013.h</file>
       <file>$PROJ_DIR$\wiring.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$PROJ_DIR$\arduino\binary.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
+      <file>$PROJ_DIR$\arduino\WProgram.h</file>
+      <file>$PROJ_DIR$\arduino\test.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+      <file>$PROJ_DIR$\wiring.h</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\arduino.c</name>
+      <name>$PROJ_DIR$\main.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 3</file>
+          <file> 9</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 5</file>
+          <file> 1</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 6</file>
+          <file> 5</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 13 14 11 0 6</file>
+          <file> 26 16 23 29 22 18 30 24 17 21 25 20 28 31 13 14 11 4 32 19 5</file>
         </tool>
       </inputs>
     </file>
@@ -51,26 +68,7 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 3 4</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 4</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 6</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 13 14 11 0 6</file>
+          <file> 9</file>
         </tool>
       </inputs>
     </file>
@@ -79,7 +77,30 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 12 5 8 9</file>
+          <file> 12 1 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\arduino.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 16 23 29 22 18 30 24 17 21 25 20 28 31 13 14 11 4 32 19 5</file>
         </tool>
       </inputs>
     </file>
@@ -88,10 +109,14 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 10</file>
+          <file> 6</file>
         </tool>
       </outputs>
     </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>

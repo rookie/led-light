@@ -109,11 +109,11 @@
         </option>
         <option>
           <name>GStackSize2</name>
-          <state>50</state>
+          <state>80</state>
         </option>
         <option>
           <name>GHeapSize2</name>
-          <state>0</state>
+          <state>80</state>
         </option>
         <option>
           <name>RadioDataModelType</name>
@@ -317,7 +317,7 @@
         </option>
         <option>
           <name>newCCIncludePaths</name>
-          <state>arduino</state>
+          <state></state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -588,7 +588,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state>led_light.d43</state>
+          <state>arduinolib.d43</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -654,7 +654,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\lnk430F2013.xcl</state>
+          <state>$TOOLKIT_DIR$\CONFIG\lnk430F149.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -782,7 +782,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state>led_light.a43</state>
+          <state>templproj.a43</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
@@ -873,7 +873,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state></state>
+          <state>arduinolib.r43</state>
         </option>
       </data>
     </settings>
@@ -1766,6 +1766,9 @@
   </configuration>
   <file>
     <name>$PROJ_DIR$\main.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\wiring.c</name>
   </file>
 </project>
 

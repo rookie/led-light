@@ -1,6 +1,8 @@
 
 //#ifdef __ICC430__
-#include "msp430.h"
+//#include <test.h>
+//#include <WProgram.h>
+#include <msp430.h>
 #include "arduino.h"
 /*
 defined (__MSP430F2013__)
