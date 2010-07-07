@@ -6,60 +6,29 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\arduino.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\arduino.pbi</file>
-      <file>$PROJ_DIR$\Debug\Exe\led_light.d43</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\arduino.r43</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\arduino.h</file>
       <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\arduino.c</file>
       <file>$PROJ_DIR$\Debug\Obj\led_light.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\arduino.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\arduino.r43</file>
+      <file>$PROJ_DIR$\arduino.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$PROJ_DIR$\Debug\Exe\led_light.d43</file>
       <file>$TOOLKIT_DIR$\inc\in430.h</file>
       <file>$TOOLKIT_DIR$\config\lnk430F2013.xcl</file>
       <file>$TOOLKIT_DIR$\inc\msp430.h</file>
       <file>$TOOLKIT_DIR$\inc\MSP430F2013.h</file>
+      <file>$PROJ_DIR$\wiring.c</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\arduino.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 2</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 6</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 8</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 13 14 11 9 8</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\led_light.d43</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 12 6 5 4</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 0</file>
+          <file> 3</file>
         </tool>
         <tool>
           <name>ICC430</name>
@@ -69,11 +38,11 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 8</file>
+          <file> 6</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 13 14 11 9 8</file>
+          <file> 13 14 11 0 6</file>
         </tool>
       </inputs>
     </file>
@@ -82,7 +51,35 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 2 0</file>
+          <file> 3 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 13 14 11 0 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\led_light.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 12 5 8 9</file>
         </tool>
       </inputs>
     </file>
@@ -91,7 +88,7 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 3</file>
+          <file> 10</file>
         </tool>
       </outputs>
     </file>

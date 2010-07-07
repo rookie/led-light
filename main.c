@@ -1,11 +1,12 @@
 
-
+//#ifdef __ICC430__
 #include "msp430.h"
 #include "arduino.h"
 /*
 defined (__MSP430F2013__)
 #include "MSP430F2013.h"
 */
+
 
 /*
 slau144e.pdf page 409
