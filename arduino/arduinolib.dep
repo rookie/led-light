@@ -50,6 +50,8 @@
       <file>$PROJ_DIR$\WProgram.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+      <file>$PROJ_DIR$\..\wiring.h</file>
+      <file>$PROJ_DIR$\..\main.c</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\wiring.c</name>

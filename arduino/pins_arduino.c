@@ -29,15 +29,15 @@
 #include "pins_arduino.h"
 
 // MSP430F2013
-//                  +-\/-+
-//            Vcc  1|    |14  Vss
-//     (D 0) P1.0  2|    |13  P2.6/TA1 (PWM)
-//     (D 1) P1.1  3|    |12  P2.7 (
-//     (D 2) P1.2  4|    |11  TEST/SBWTCK
-//     (D 3) P1.3  5|    |10  /RST
-//     (D 4) P1.4  6|    |9   P1.7     (D 7) 
-//(PWM)(D 5) P1.5  7|    |8   P1.6/TA1 (D 6)(PWM)
-//      TA0         +----+
+//                           +-\/-+
+//                     Vcc  1|    |14  Vss
+//          (AI0+,D0) P1.0  2|    |13  P2.6 (D8, TA1)
+// (AI0-,AI4+,TA0,D1) P1.1  3|    |12  P2.7 (D9)
+// (AI1+,AI4-,TA1,D2) P1.2  4|    |11  TEST,SBWTCK
+// (AI1-,    Vref,D3) P1.3  5|    |10  /RST
+//      (AI2+,    D4) P1.4  6|    |9   P1.7 (D7,    AI3-,SDI,SDA) 
+//      (AI2-,TA0,D5) P1.5  7|    |8   P1.6 (D6,TA1,AI3+,SDO,SCL)
+//               TA0         +----+                      SPI,I2C
 
 // On the Arduino board, digital pins are also used
 // for the analog output (software PWM).  Analog input
@@ -78,6 +78,10 @@
 // A0-A7 PF0-PF7
 // A8-A15 PK0-PK7
 
+#ifdef __ICC430__
+#define P1 1
+#define P2 2
+#else
 #define PA 1
 #define PB 2
 #define PC 3
@@ -89,7 +93,7 @@
 #define PJ 10
 #define PK 11
 #define PL 12
-
+#endif
 #define REPEAT8(x) x, x, x, x, x, x, x, x
 #define BV0TO7 _BV(0), _BV(1), _BV(2), _BV(3), _BV(4), _BV(5), _BV(6), _BV(7)
 #define BV7TO0 _BV(7), _BV(6), _BV(5), _BV(4), _BV(3), _BV(2), _BV(1), _BV(0)
@@ -100,45 +104,38 @@
 // appropriate addresses for various functions (e.g. reading
 // and writing)
 const uint16_t PROGMEM port_to_mode_PGM[] = {
-        P1DIR,
-        P2DIR
+        NOT_A_PORT,
+        &P1DIR,
+        &P2DIR
 };
 
 const uint16_t PROGMEM port_to_output_PGM[] = {
-        P1OUT,
-        P2OUT
+        NOT_A_PORT,
+        &P1OUT,
+        &P2OUT
 };
 
 const uint16_t PROGMEM port_to_input_PGM[] = {
-        P1IN,
-        P2IN
+        NOT_A_PORT,
+        &P1IN,
+        &P2IN
 };
 
 const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
-        PD, /* 0 */
-        PD,
-        PD,
-        PD,
-        PD,
-        PD,
-        PD,
-        PD,
-        PB, /* 8 */
-        PB,
-        PB,
-        PB,
-        PB,
-        PB,
-        PC, /* 14 */
-        PC,
-        PC,
-        PC,
-        PC,
-        PC,
+        P1, /* 0 */
+        P1,
+        P1,
+        P1,
+        P1,
+        P1,
+        P1,
+        P1,
+        P2, /* 8 */
+        P2,
 };
 
 const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
-        _BV(0), /* 0, port D */
+        _BV(0), /* 0, port 1 */
         _BV(1),
         _BV(2),
         _BV(3),
@@ -146,58 +143,23 @@ const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
         _BV(5),
         _BV(6),
         _BV(7),
-        _BV(0), /* 8, port B */
-        _BV(1),
-        _BV(2),
-        _BV(3),
-        _BV(4),
-        _BV(5),
-        _BV(0), /* 14, port C */
-        _BV(1),
-        _BV(2),
-        _BV(3),
-        _BV(4),
-        _BV(5),
+        _BV(6), /* 8, port 2 */
+        _BV(7),
 };
 
 const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
-        NOT_ON_TIMER, /* 0 - port D */
+        NOT_ON_TIMER, /* 0 - port 1 */
+        TIMER0,
+        TIMER1,
         NOT_ON_TIMER,
         NOT_ON_TIMER,
-        // on the ATmega168, digital pin 3 has hardware pwm
-#if defined(__AVR_ATmega8__)
+        TIMER0,
+        TIMER1,
         NOT_ON_TIMER,
-#else
-        TIMER2B,
-#endif
-        NOT_ON_TIMER,
-        // on the ATmega168, digital pins 5 and 6 have hardware pwm
-#if defined(__AVR_ATmega8__)
-        NOT_ON_TIMER,
-        NOT_ON_TIMER,
-#else
-        TIMER0B,
-        TIMER0A,
-#endif
-        NOT_ON_TIMER,
-        NOT_ON_TIMER, /* 8 - port B */
-        TIMER1A,
-        TIMER1B,
-#if defined(__AVR_ATmega8__)
-        TIMER2,
-#else
-        TIMER2A,
-#endif
-        NOT_ON_TIMER,
-        NOT_ON_TIMER,
-        NOT_ON_TIMER,
-        NOT_ON_TIMER, /* 14 - port C */
-        NOT_ON_TIMER,
-        NOT_ON_TIMER,
-        NOT_ON_TIMER,
+        TIMER1, /* 8 - port 2 */
         NOT_ON_TIMER,
 };
-
+//done with msp430
 #elif defined(__AVR_ATmega1280__)
 const uint16_t PROGMEM port_to_mode_PGM[] = {
         NOT_A_PORT,
