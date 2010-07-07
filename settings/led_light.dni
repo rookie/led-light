@@ -49,6 +49,10 @@ State Storage=0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
 [Breakpoints]
 Bp0=_ "STD_CODE" "Memory:0x0" 0 0 0 0 "" 0 ""
 Count=1
@@ -72,10 +76,6 @@ SP=0
 SR=0
 all registers=0
 File name=
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
 [Aliases]
 A0=_ "" ""
 Count=1
