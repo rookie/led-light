@@ -89,10 +89,17 @@ unsigned long millis()
 
 unsigned long micros() {
         unsigned long m;
-        uint8_t oldSREG = SREG, t;
+        uint8_t t = 0;
+#ifdef __ICC430__
+        istate_t state = __get_interrupt_state();
+        __disable_interrupt();
+#else
+        uint8_t oldSREG = SREG;
        
         cli();
+#endif
         m = timer0_overflow_count;
+#if 0
         t = TCNT0;
  
 #ifdef TIFR0
@@ -102,9 +109,13 @@ unsigned long micros() {
         if ((TIFR & _BV(TOV0)) && (t < 255))
                 m++;
 #endif
-
+#endif
+#ifdef __ICC430__
+        __set_interrupt_state(state);
+#else
         SREG = oldSREG;
-       
+#endif
+  
         return ((m << 8) + t) * (64 / clockCyclesPerMicrosecond());
 }
 
@@ -119,7 +130,7 @@ void delay(unsigned long ms)
                 }
         }
 }
-
+#if 0
 /* Delay for the given number of microseconds.  Assumes a 8 or 16 MHz clock. */
 void delayMicroseconds(unsigned int us)
 {
@@ -169,9 +180,34 @@ void delayMicroseconds(unsigned int us)
                 "brne 1b" : "=w" (us) : "0" (us) // 2 cycles
         );
 }
-
+#endif
 void init()
 {
+
+#ifdef __ICC430__
+
+
+  WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT 
+  
+  BCSCTL1 = CALBC1_16MHZ; /*use precalibrated values to set 16mhz clock*/
+  DCOCTL  = CALDCO_16MHZ; 
+  _BIS_SR(OSCOFF);        /*we are not using an external oscillator*/
+  
+  BCSCTL2 = DIVS_3;       /*set smclk prescaler to 8*/
+  /*NOTE: there is no reason for this other than to stick timer to a prescale
+    of 64 after the next 8 divide like in the arduino libary*/
+  
+  
+  TACCTL0 = CCIE;         // timer0 CCR0 interrupt enabled
+  TACCR0 = 0xFF;
+  TACTL = TASSEL_2 + ID_3 + MC_1;     /* SMCLK, /8, upmode*/
+  
+  __enable_interrupt();
+
+
+
+#else  
+  
         // this needs to be called before setup() or some functions won't
         // work there
         sei();
@@ -253,4 +289,6 @@ void init()
 #else
         UCSR0B = 0;
 #endif
+        
+#endif //__ICC430__
 }
