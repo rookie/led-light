@@ -40,6 +40,8 @@
       <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
       <file>$PROJ_DIR$\wiring.h</file>
       <file>$PROJ_DIR$\arduino\wiring.h</file>
+      <file>$PROJ_DIR$\arduino\wiring.c</file>
+      <file>$PROJ_DIR$\arduino\wiring_private.h</file>
       <file>$PROJ_DIR$\arduino\wiring_digital.c</file>
       <file>$PROJ_DIR$\arduino\pins_arduino.h</file>
       <file>$PROJ_DIR$\arduino\pins_arduino.c</file>
