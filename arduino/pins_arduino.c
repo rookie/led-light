@@ -105,20 +105,20 @@
 // and writing)
 const uint16_t PROGMEM port_to_mode_PGM[] = {
         NOT_A_PORT,
-        &P1DIR,
-        &P2DIR
+        P1DIR_,
+        P2DIR_
 };
 
 const uint16_t PROGMEM port_to_output_PGM[] = {
         NOT_A_PORT,
-        &P1OUT,
-        &P2OUT
+        P1OUT_,
+        P2OUT_
 };
 
 const uint16_t PROGMEM port_to_input_PGM[] = {
         NOT_A_PORT,
-        &P1IN,
-        &P2IN
+        P1IN_,
+        P2IN_
 };
 
 const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
@@ -149,14 +149,14 @@ const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
 
 const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
         NOT_ON_TIMER, /* 0 - port 1 */
-        TIMER0,
-        TIMER1,
+        TIMERA0,
+        TIMERA1,
         NOT_ON_TIMER,
         NOT_ON_TIMER,
-        TIMER0,
-        TIMER1,
+        TIMERA0,
+        TIMERA1,
         NOT_ON_TIMER,
-        TIMER1, /* 8 - port 2 */
+        TIMERA1, /* 8 - port 2 */
         NOT_ON_TIMER,
 };
 //done with msp430

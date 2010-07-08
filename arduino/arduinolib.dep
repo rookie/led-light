@@ -83,6 +83,10 @@
           <name>BICOMP</name>
           <file> 14</file>
         </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 13</file>
+        </tool>
       </outputs>
       <inputs>
         <tool>
@@ -109,7 +113,7 @@
       <inputs>
         <tool>
           <name>XLINK</name>
-          <file> 1 15 7 13 0</file>
+          <file> 1 15 25 7 13 0</file>
         </tool>
       </inputs>
     </file>
@@ -148,6 +152,10 @@
           <name>BICOMP</name>
           <file> 22</file>
         </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 25</file>
+        </tool>
       </outputs>
       <inputs>
         <tool>
@@ -160,10 +168,6 @@
         </tool>
       </inputs>
     </file>
-    <forcedrebuild>
-      <name>[MULTI_TOOL]</name>
-      <tool>XLINK</tool>
-    </forcedrebuild>
   </configuration>
   <configuration>
     <name>Release</name>

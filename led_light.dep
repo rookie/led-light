@@ -39,6 +39,10 @@
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
       <file>$PROJ_DIR$\wiring.h</file>
+      <file>$PROJ_DIR$\arduino\wiring.h</file>
+      <file>$PROJ_DIR$\arduino\wiring_digital.c</file>
+      <file>$PROJ_DIR$\arduino\pins_arduino.h</file>
+      <file>$PROJ_DIR$\arduino\pins_arduino.c</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\main.c</name>
@@ -59,7 +63,7 @@
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 26 16 23 29 22 18 30 24 17 21 25 20 28 31 13 14 11 4 32 19 5</file>
+          <file> 26 13 14 11 4 16 23 29 22 18 30 24 17 21 25 20 28 31 33 19 5</file>
         </tool>
       </inputs>
     </file>

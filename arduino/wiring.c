@@ -186,7 +186,6 @@ void init()
 
 #ifdef __ICC430__
 
-
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT 
   
   BCSCTL1 = CALBC1_16MHZ; /*use precalibrated values to set 16mhz clock*/

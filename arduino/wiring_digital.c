@@ -47,9 +47,19 @@ void pinMode(uint8_t pin, uint8_t mode)
 // But shouldn't this be moved into pinMode? Seems silly to check and do on
 // each digitalread or write.
 //
+#if !defined(__ICC430__)
 static inline void turnOffPWM(uint8_t timer) __attribute__ ((always_inline));
+#endif
 static inline void turnOffPWM(uint8_t timer)
 {
+#if defined(__ICC430__)
+  if (timer == TIMERA0){
+    TACCTL0 &= ~(OUTMOD2 | OUTMOD1 | OUTMOD0);
+  }
+  if (timer == TIMERA1){
+    TACCTL1 &= ~(OUTMOD2 | OUTMOD1 | OUTMOD0);
+  }
+#else
         if (timer == TIMER1A) cbi(TCCR1A, COM1A1);
         if (timer == TIMER1B) cbi(TCCR1A, COM1B1);
 
@@ -73,6 +83,7 @@ static inline void turnOffPWM(uint8_t timer)
         if (timer == TIMER5B) cbi(TCCR5A, COM5B1);
         if (timer == TIMER5C) cbi(TCCR5A, COM5C1);
 #endif
+#endif //__ICC430__
 }
 
 void digitalWrite(uint8_t pin, uint8_t val)

@@ -34,6 +34,10 @@
 #define NOT_A_PORT 0
 
 #define NOT_ON_TIMER 0
+#if defined(__ICC430__)
+#define TIMERA0 1
+#define TIMERA1 2
+#else
 #define TIMER0A 1
 #define TIMER0B 2
 #define TIMER1A 3
@@ -51,6 +55,7 @@
 #define TIMER5A 14
 #define TIMER5B 15
 #define TIMER5C 16
+#endif
 
 // On the ATmega1280, the addresses of some of the port registers are
 // greater than 255, so we can't store them in uint8_t's.

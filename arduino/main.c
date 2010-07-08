@@ -1,10 +1,27 @@
+int ledPin = 0;                 // LED connected to digital pin 13
 
-//#include "io430.h"
-
-int main( void )
+void setup()
 {
-  // Stop watchdog timer to prevent time out reset
-  WDTCTL = WDTPW + WDTHOLD;
-
-  return 0;
+  pinMode(ledPin, OUTPUT);      // sets the digital pin as output
 }
+
+void loop()
+{
+  digitalWrite(ledPin, HIGH);   // sets the LED on
+  delay(2000);                  // waits for a second
+  digitalWrite(ledPin, LOW);    // sets the LED off
+  delay(2000);                  // waits for a second
+}
+
+
+int main(void)
+{
+  init();
+  setup();
+
+  for (;;){
+    loop();
+  }
+  //return 0;
+}
+
