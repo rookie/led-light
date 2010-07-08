@@ -25,7 +25,7 @@
 #ifndef Wiring_h
 #define Wiring_h
 
-#ifndef __ICC430__
+#if !defined(__ICC430__)
 #include <avr/io.h>
 #endif
 #include "binary.h"

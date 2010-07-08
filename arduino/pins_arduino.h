@@ -25,7 +25,7 @@
 #ifndef Pins_Arduino_h
 #define Pins_Arduino_h
 
-#ifdef __ICC430__
+#if defined(__ICC430__)
 
 #else
 #include <avr/pgmspace.h>

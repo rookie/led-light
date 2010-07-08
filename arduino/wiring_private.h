@@ -25,7 +25,7 @@
 #ifndef WiringPrivate_h
 #define WiringPrivate_h
 
-#ifdef __ICC430__
+#if defined(__ICC430__)
 #else
 #include <avr/io.h>
 #include <avr/interrupt.h>

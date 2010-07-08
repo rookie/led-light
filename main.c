@@ -1,5 +1,5 @@
 
-//#ifdef __ICC430__
+//#if defined(__ICC430__)
 //#include <test.h>
 //#include <WProgram.h>
 #include <msp430.h>

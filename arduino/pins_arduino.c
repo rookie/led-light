@@ -21,7 +21,7 @@
 
   $Id$
 */
-#ifdef __ICC430__
+#if defined(__ICC430__)
 #else
 #include <avr/io.h>
 #endif
@@ -78,7 +78,7 @@
 // A0-A7 PF0-PF7
 // A8-A15 PK0-PK7
 
-#ifdef __ICC430__
+#if defined(__ICC430__)
 #define P1 1
 #define P2 2
 #else

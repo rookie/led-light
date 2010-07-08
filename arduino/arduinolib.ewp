@@ -58,7 +58,7 @@
         </option>
         <option>
           <name>RTDescription</name>
-          <state>Use the normal configuration of the C/EC++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
+          <state>To be used with the normal configuration of the C/EC++ runtime library. No locale interface, C locale, no file descriptor support, no multibytes in printf and scanf, and no hex floats in strtod.</state>
         </option>
         <option>
           <name>RTConfigPath</name>
@@ -309,7 +309,7 @@
         </option>
         <option>
           <name>CCRadioModuleType</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCRadioModuleTypeSlave</name>
@@ -1764,17 +1764,20 @@
       <data/>
     </settings>
   </configuration>
+  <group>
+    <name>arduino</name>
+    <file>
+      <name>$PROJ_DIR$\pins_arduino.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\wiring.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\wiring_digital.c</name>
+    </file>
+  </group>
   <file>
     <name>$PROJ_DIR$\main.c</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\pins_arduino.c</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\wiring.c</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\wiring_digital.c</name>
   </file>
 </project>
 

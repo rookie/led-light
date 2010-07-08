@@ -41,7 +41,7 @@ volatile unsigned long timer0_overflow_count = 0;
 volatile unsigned long timer0_millis = 0;
 static unsigned char timer0_fract = 0;
 
-#ifdef __ICC430__
+#if defined(__ICC430__)
 // Timer A0 interrupt service routine
 #pragma vector=TIMERA0_VECTOR
 __interrupt void Timer_A (void)
@@ -69,7 +69,7 @@ SIGNAL(TIMER0_OVF_vect)
 unsigned long millis()
 {
         unsigned long m;
-#ifdef __ICC430__
+#if defined(__ICC430__)
         istate_t state = __get_interrupt_state();
         __disable_interrupt();
 #else
@@ -79,7 +79,7 @@ unsigned long millis()
         cli();  
 #endif
         m = timer0_millis;
-#ifdef __ICC430__
+#if defined(__ICC430__)
         __set_interrupt_state(state);
 #else
         SREG = oldSREG;
@@ -90,7 +90,7 @@ unsigned long millis()
 unsigned long micros() {
         unsigned long m;
         uint8_t t = 0;
-#ifdef __ICC430__
+#if defined(__ICC430__)
         istate_t state = __get_interrupt_state();
         __disable_interrupt();
 #else
@@ -110,7 +110,7 @@ unsigned long micros() {
                 m++;
 #endif
 #endif
-#ifdef __ICC430__
+#if defined(__ICC430__)
         __set_interrupt_state(state);
 #else
         SREG = oldSREG;
@@ -191,7 +191,7 @@ void delayMicroseconds(unsigned int us)
 void init()
 {
 
-#ifdef __ICC430__
+#if defined(__ICC430__)
 
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT 
   
